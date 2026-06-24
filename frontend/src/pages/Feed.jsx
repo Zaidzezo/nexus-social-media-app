@@ -376,7 +376,7 @@ const Feed = ({ mode }) => {
                                 const isAdded = (currentUser?.following || []).includes(usr._id);
                                 return (
                                     <div key={usr._id} className="flex items-center justify-between gap-3">
-                                        <Link to={`/${usr._id}`} className="flex items-center gap-3 min-w-0 group">
+                                        <Link to={`/profile/${usr._id}`} className="flex items-center gap-3 min-w-0 group">
                                             {usr.profilePic ? (
                                                 <img 
                                                     src={usr.profilePic} 
