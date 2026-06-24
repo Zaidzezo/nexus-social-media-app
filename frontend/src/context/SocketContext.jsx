@@ -46,8 +46,12 @@ export const SocketProvider = ({ children }) => {
             return;
         }
 
+        // Automatically strips out the '/api' suffix if VITE_API_URL contains it, ensuring Socket.io connects to the root domain
+        const rawUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        const socketUrl = rawUrl.endsWith('/api') ? rawUrl.replace(/\/api$/, '') : rawUrl;
+
         const socket = io(
-            import.meta.env.VITE_API_URL || 'http://localhost:5000',
+            socketUrl,
             {
                 auth: { token },
                 transports: ['websocket', 'polling'],
