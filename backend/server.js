@@ -20,9 +20,9 @@ app.use(express.urlencoded({ limit: '5mb', extended: true }));
 
 connectDB();
 
-app.use('/api/auth',     require('./routes/authRoutes'));
-app.use('/api/posts',    require('./routes/postRoutes'));
-app.use('/api/users',    require('./routes/userRoutes'));
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/posts', require('./routes/postRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/comments', require('./routes/commentRoutes'));
 app.use('/api/messages', require('./routes/messageRoutes'));
 
@@ -39,6 +39,8 @@ const io = new Server(server, {
 
 socketHandler(io);
 
-server.listen(5000, () => {
-    console.log('Server running on port 5000');
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
