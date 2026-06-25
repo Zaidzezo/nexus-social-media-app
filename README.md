@@ -2,6 +2,8 @@
 
 Nexus is a full-stack social media application built using the MERN stack (MongoDB, Express, React, and Node.js). It supports real-time features, secure user authentication, global theme management, and dynamic user feeds.
 
+#### Preview: nexus-frontend-o7lc.onrender.com
+
 ## Features
 
 * **Real-Time Messaging:** Instant messaging and active connection tracking powered by Socket.io.
